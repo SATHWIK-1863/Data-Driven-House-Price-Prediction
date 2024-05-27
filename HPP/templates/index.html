@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>House Price Prediction</title>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+
+        <link rel="icon" href="../static/favicon/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" href="../static/favicon/favicon-32x32.png" sizes="32x32" />
+
+        <link rel="icon" href="../static/favicon/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" href="../static/favicon/android-chrome-512x512.png" sizes="512x512">
+
+        <link rel="apple-touch-icon" href="../static/favicon/apple-touch-icon.png" />
+
+        <link rel="manifest" href="../static/favicon/site.webmanifest" />
+
+        <link rel="stylesheet" href="../static/app.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Catamaran:wght@100&family=Rubik:wght@400&display=swap"
+            rel="stylesheet">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-941JFENJNP"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-941JFENJNP');
+        </script>
+    </head>
+
+    <body>
+        <p class="hidden">Predicting The Real Estate Prices In And Around Bangalore City Trained Using Machine Learning
+            Algorithms Giving Utmost Accuracy Possible.
+        <p>
+        <div class="img"></div>
+        <fieldset class="fs">
+            <legend>House Price Estimation:</legend>
+            <form class="form" method="post" accept-charset="utf-8">
+                <h2>Area (Square Feet)</h2>
+                <input class="area" type="number" inputmode="decimal" id="uiSqft" class="floatLabel" name="total_sqft"
+                    value=2500 placeholder="Enter Area in SFT" required>
+                <h2>BHK</h2>
+                <div class="switch-field">
+                    <input type="radio" id="radio-bhk-1" name="bhk" value="1" />
+                    <label for="radio-bhk-1">1</label>
+                    <input type="radio" id="radio-bhk-2" name="bhk" value="2" />
+                    <label for="radio-bhk-2">2</label>
+                    <input type="radio" id="radio-bhk-3" name="bhk" value="3" checked />
+                    <label for="radio-bhk-3">3</label>
+                    <input type="radio" id="radio-bhk-4" name="bhk" value="4" />
+                    <label for="radio-bhk-4">4</label>
+                    <input type="radio" id="radio-bhk-5" name="bhk" value="5" />
+                    <label for="radio-bhk-5">5</label>
+                </div>
+                <h2>Bath</h2>
+                <div class="switch-field">
+                    <input type="radio" id="radio-bath-1" name="bath" value="1" />
+                    <label for="radio-bath-1">1</label>
+                    <input type="radio" id="radio-bath-2" name="bath" value="2" checked />
+                    <label for="radio-bath-2">2</label>
+                    <input type="radio" id="radio-bath-3" name="bath" value="3" />
+                    <label for="radio-bath-3">3</label>
+                    <input type="radio" id="radio-bath-4" name="bath" value="4" />
+                    <label for="radio-bath-4">4</label>
+                    <input type="radio" id="radio-bath-5" name="bath" value="5" />
+                    <label for="radio-bath-5">5</label>
+                </div>
+                <h2>Location</h2>
+                <div>
+                    <select class="location" name="loc" id="loc" required>
+                        <option value="Choose a Location" disabled>Choose a Location</option>
+                        <option value="1st block jayanagar" selected>1st block jayanagar</option>
+
+                        {% for loc in locs %}
+
+                        <option value="{{ loc }}">{{ loc }}</option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+                <button class="submit" onclick="onClickedEstimatePrice()">Estimate Price</button>
+            </form>
+            <div class="result">
+                <h2><span id="prediction"></span></h2>
+            </div>
+        </fieldset>
+        </div>
+
+        <script>
+            function form_handler(event) {
+                event.preventDefault();
+            }
+
+            function onClickedEstimatePrice() {
+                document.querySelector('form').addEventListener('submit', form_handler);
+
+                var fd = new FormData(document.querySelector('form'));
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('POST', '/predict', true);
+                document.getElementById("prediction").innerHTML = "Predicting Price...";
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                        document.getElementById("prediction").innerHTML = xhr.responseText;
+                    }
+                }
+
+                xhr.onload = function () { };
+                xhr.send(fd);
+            }
+        </script>
+    </body>
+
+</html>

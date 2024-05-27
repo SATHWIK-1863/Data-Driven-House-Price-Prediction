@@ -1,0 +1,387 @@
+body {
+	color: #110f0f;
+}
+
+.hidden {
+	color: transparent;
+	position: absolute;
+}
+
+.switch-field {
+	display: flex;
+	margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #dcdfdf;
+	font-family: "Alegreya Sans SC", sans-serif;
+	color: rgba(0, 0, 0, 0.6);
+	width: 7px;
+	height: 15px;
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+	position: relative;
+	left: 8px;
+	background-color: white;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+	background-color: #fdeee8;
+}
+
+.switch-field input:checked + label {
+	color: white;
+	background-color: #f8aa83;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
+.form {
+	max-width: 270px;
+	font-family: "Alegreya Sans SC", sans-serif;
+	font-weight: normal;
+	line-height: 1.625;
+	margin: 8px auto;
+	padding-left: 16px;
+	z-index: 2;
+}
+
+h2 {
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.area {
+	height: 15px;
+	font-family: "Alegreya Sans SC", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 90%;
+	border: 0;
+	margin: 0 0 10px;
+	padding: 6px auto 10px auto;
+	box-sizing: border-box;
+	font-size: 15px;
+	height: 35px;
+	border-radius: 5px;
+	position: relative;
+	left: 4px;
+}
+
+::-webkit-input-placeholder {
+	font-family: "Catamaran", sans-serif;
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	font-family: "Catamaran", sans-serif;
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	font-family: "Catamaran", sans-serif;
+}
+
+:-ms-input-placeholder {
+	font-family: "Catamaran", sans-serif;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.location {
+	height: 15px;
+	font-family: "Alegreya Sans SC", sans-serif !important;
+	outline: 0;
+	background: #f2f2f2;
+	width: 85%;
+	border: 0;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 15px;
+	height: 40px;
+	border-radius: 5px;
+	margin: 0px 10px 10px auto;
+	position: relative;
+	right: -9px;
+}
+
+.submit {
+	color: black;
+	font-family: "Alegreya Sans SC", sans-serif;
+	background: #f8bc72ce;
+	width: 90%;
+	border: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	height: 35px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 25px auto 0px 3px;
+	border: 1px solid white;
+}
+
+.result {
+	font-family: "Rubik", sans-serif;
+	background: #e6e7eb;
+	width: 85%;
+	line-height: 0.21;
+	border: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	height: 35px;
+	text-align: center;
+	border-radius: 3px;
+	margin: 30px 36px 0px 24px;
+	margin: 30px auto 0px;
+	border: 1px solid #f3b01ff8;
+}
+
+.img {
+	/*background: url("https://i.ibb.co/h9ZjkBf/cropped-image.png");*/
+	background: url("phone.webp");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(0.5px);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+	.img {
+		/*background: url("https://m.foolcdn.com/media/millionacres/original_images/image2_mdDMemJ.jpg?crop=4:3,smart");*/
+		background: url("Tablet.webp");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		-webkit-filter: blur(5px);
+		-moz-filter: blur(5px);
+		-o-filter: blur(5px);
+		-ms-filter: blur(5px);
+		filter: blur(0.6px);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.switch-field input:checked + label {
+		background-color: #022e57;
+	}
+	.switch-field label:hover {
+		cursor: pointer;
+		background-color: #e0f0ff;
+	}
+	.submit {
+		background: #00598de5;
+	}
+	.result {
+		line-height: 0.21;
+		border: 1px solid #05103b;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	body {
+		overflow: hidden;
+	}
+	.img {
+		/*background: url("https://www.washingtonian.com/wp-content/uploads/2019/08/lead-5-scaled.jpg");*/
+		background: url("web.webp");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		-webkit-filter: blur(5px);
+		-moz-filter: blur(5px);
+		-o-filter: blur(5px);
+		-ms-filter: blur(5px);
+		filter: blur(0.7px);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.switch-field input:checked + label {
+		background-color: #00adb5;
+	}
+	.switch-field label:hover {
+		cursor: pointer;
+		background-color: #ddfdfd;
+		transition: 0.5s;
+	}
+	.submit {
+		color: black;
+		background: #91dce4c9;
+	}
+	.result {
+		line-height: 0.21;
+		border: 1px solid #b6dcee;
+	}
+}
+
+fieldset {
+	transition: box-shadow 0.5s;
+	background-color: rgba(239, 241, 241, 0.449);
+	border-radius: 4px;
+	max-width: 250px;
+	max-height: 650px;
+	margin: auto;
+	padding: 50px;
+	border: 1px solid black;
+	position: relative;
+	padding-top: 20px;
+}
+
+legend {
+	transition: box-shadow 0.5s;
+	font-family: "Alegreya Sans SC", sans-serif;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 3px 5px 3px 7px;
+	width: auto;
+	position: absolute;
+	bottom: 593.5px;
+	right: 160px;
+}
+
+fieldset:hover legend,
+fieldset:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.653);
+}
+
+input:focus,
+select:focus,
+label:focus {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.238);
+}
+
+@media screen and (max-width: 475px) {
+	.form {
+		max-width: 80%;
+		font-family: "Alegreya Sans SC", sans-serif;
+		font-weight: normal;
+		line-height: 1.625;
+		margin: 8px auto;
+		padding-left: 16px;
+		z-index: 2;
+	}
+
+	h2 {
+		font-size: 15px;
+	}
+
+	.area {
+		height: 30px;
+	}
+
+	.switch-field {
+		display: flex;
+		margin-bottom: 30px;
+		margin-right: 16.5px;
+	}
+
+	.switch-field input {
+		position: absolute !important;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		width: 1px;
+		border: 0;
+	}
+
+	.switch-field label {
+		width: 30px;
+		padding: 6px 3px;
+		position: relative;
+		left: 0px;
+	}
+
+	.location {
+		width: 175px;
+		padding: 5px;
+		height: 30px;
+		position: relative;
+		right: 7px;
+	}
+
+	.submit {
+		height: 30px;
+		position: relative;
+		right: 3px;
+	}
+
+	.result {
+		font-size: 10px;
+		height: 30px;
+		width: 180px;
+	}
+
+	fieldset {
+		padding: 30px;
+		border: 1px solid black;
+		padding-top: 20px;
+	}
+
+	legend {
+		font-size: 15px;
+		padding: 3px 5px;
+		width: 150px;
+		position: absolute;
+		bottom: 506px;
+		right: 106px;
+	}
+}
+
+body,
+html {
+	height: 100%;
+}
+
+body {
+	margin: 60px;
+	border: 60px;
+}
